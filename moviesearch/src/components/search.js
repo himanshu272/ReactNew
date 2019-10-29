@@ -20,11 +20,8 @@ class Search extends Component {
   search = event => {
     event.preventDefault();
     console.log("a");
-    let mov = {
-      t: this.state.title
-    };
-    console.log(mov.t);
-    axios.get("http://www.omdbapi.com/?apikey=d36eeaa&", mov).then(r => {
+    let url = "http://www.omdbapi.com/?apikey=d36eeaa&t=" + this.state.title;
+    axios.get(url).then(r => {
       console.log(r);
       this.setState({
         movie: r
@@ -35,7 +32,7 @@ class Search extends Component {
   render() {
     let res;
     if (this.state.movie !== undefined)
-      res = <Details movie={this.state.movie}></Details>;
+      res = <Details movie={this.state.movie.data}></Details>;
     else res = <p />;
     return (
       <div>

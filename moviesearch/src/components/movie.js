@@ -1,9 +1,10 @@
 import React from "react";
 
-export default function movie(props) {
+function Details(props) {
   return (
     <div>
       <h3> Details: </h3>
+      <img src={props.movie.Poster}></img>
       <h4> Movie name: {props.movie.Title} </h4>
       <h4> Released in: {props.movie.Year}</h4>
       <h4> Rated: {props.movie.Rated}</h4>
@@ -11,3 +12,5 @@ export default function movie(props) {
     </div>
   );
 }
+
+export default Details;

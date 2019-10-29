@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Details from "./Details";
+import Loading from "./Loading";
 import axios from "axios";
 
 class Search extends Component {
@@ -9,28 +10,37 @@ class Search extends Component {
     this.state = {
       title: "",
       movie: undefined,
-      error: false
+      loading: false
     };
   }
   titleChange = e => this.setState({ title: e.target.value });
 
   search = event => {
-    event.preventDefault();
-    console.log("a");
+    if (this.state.loading === false) event.preventDefault();
+    this.setState({
+      loading: true,
+      movie: undefined
+    });
     let url = "http://www.omdbapi.com/?apikey=d36eeaa&t=" + this.state.title;
     axios.get(url).then(r => {
-      console.log(r);
       this.setState({
-        movie: r
+        movie: r,
+        loading: false
       });
     });
   };
 
+  componentDidMount() {
+    this.setState({
+      loading: false
+    });
+  }
   render() {
-    let res;
+    let res, load;
     if (this.state.movie !== undefined)
       res = <Details movie={this.state.movie.data}></Details>;
     else res = <p />;
+    load = <Loading show={this.state.loading} />;
     return (
       <div className="jumbotron">
         <p>Enter the movie name:</p>
@@ -42,6 +52,7 @@ class Search extends Component {
         <button className="btn btn-success" type="submit" onClick={this.search}>
           Search
         </button>
+        {load}
         {res}
       </div>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "./components/search";
+import Search from "./components/Search";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {

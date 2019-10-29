@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Details from "./movie";
+import Details from "./Details";
 import axios from "axios";
 
 class Search extends Component {
@@ -12,10 +12,7 @@ class Search extends Component {
       error: false
     };
   }
-  titleChange = e => {
-    console.log(this.state.title);
-    this.setState({ title: e.target.value });
-  };
+  titleChange = e => this.setState({ title: e.target.value });
 
   search = event => {
     event.preventDefault();
@@ -35,15 +32,14 @@ class Search extends Component {
       res = <Details movie={this.state.movie.data}></Details>;
     else res = <p />;
     return (
-      <div>
+      <div className="jumbotron">
         <p>Enter the movie name:</p>
         <input
           type="text"
           value={this.state.title}
           onChange={this.titleChange}
         ></input>
-        {console.log(this.state.movie)}
-        <button type="submit" onClick={this.search}>
+        <button className="btn btn-success" type="submit" onClick={this.search}>
           Search
         </button>
         {res}

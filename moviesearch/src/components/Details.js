@@ -7,10 +7,10 @@ function Details(props) {
     <div>
       <h3> Details: </h3>
       <img src={props.movie.Poster} alt={img}></img>
-      <h4 className="display-4"> Movie name: {props.movie.Title} </h4>
-      <h4 className="display-4"> Released in: {props.movie.Year}</h4>
-      <h4 className="display-4"> Rated: {props.movie.Rated}</h4>
-      <h4 className="display-4"> Plot: {props.movie.Plot}</h4>
+      <h6 className="display-6"> Movie name: {props.movie.Title} </h6>
+      <h6 className="display-6"> Released in: {props.movie.Year}</h6>
+      <h6 className="display-6"> Rated: {props.movie.Rated}</h6>
+      <h6 className="display-6"> Plot: {props.movie.Plot}</h6>
     </div>
   );
 }

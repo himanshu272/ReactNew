@@ -1,13 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import Search from "./Search";
+import Home from "./Home";
+import About from "./About";
 function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-          MovieSearch
-        </a>
+        <a className="navbar-brand"></a>
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">

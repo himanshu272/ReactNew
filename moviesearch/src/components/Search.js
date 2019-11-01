@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Details from "./Details";
 import Loading from "./Loading";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 class Search extends Component {
   constructor(props) {
@@ -42,18 +43,24 @@ class Search extends Component {
     else res = <p />;
     load = <Loading show={this.state.loading} />;
     return (
-      <div className="jumbotron">
-        <p>Enter the movie name:</p>
-        <input
-          type="text"
-          value={this.state.title}
-          onChange={this.titleChange}
-        ></input>
-        <button className="btn btn-success" type="submit" onClick={this.search}>
-          Search
-        </button>
-        {load}
-        {res}
+      <div>
+        <div className="jumbotron">
+          <p>Enter the movie name:</p>
+          <input
+            type="text"
+            value={this.state.title}
+            onChange={this.titleChange}
+          ></input>
+          <button
+            className="btn btn-success"
+            type="submit"
+            onClick={this.search}
+          >
+            Search
+          </button>
+          {load}
+          {res}
+        </div>
       </div>
     );
   }

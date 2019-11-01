@@ -6,8 +6,8 @@ class Selected extends Component {
 
     this.state = {
       title: this.props.movie,
-      img: "",
-      propername: ""
+      img: undefined,
+      propername: undefined
     };
   }
 
@@ -18,7 +18,7 @@ class Selected extends Component {
         this.setState({
           img: res.data.Poster,
           propername: res.data.Title
-        }).catch(console.log("Error."))
+        })
       );
     return (
       <div>

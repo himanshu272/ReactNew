@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Details from "./Details";
 import Loading from "./Loading";
 import axios from "axios";
-import Navbar from "./Navbar";
 
 class Search extends Component {
   constructor(props) {
@@ -37,9 +36,10 @@ class Search extends Component {
     });
   }
   render() {
+
     let res, load;
     if (this.state.movie !== undefined)
-      res = <Details movie={this.state.movie.data}></Details>;
+      res = <Details movie={this.state.movie.data}/>;
     else res = <p />;
     load = <Loading show={this.state.loading} />;
     return (

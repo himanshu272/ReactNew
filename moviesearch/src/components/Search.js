@@ -46,13 +46,14 @@ class Search extends Component {
       <div>
         <div className="jumbotron">
           <p>Enter the movie name:</p>
-          <input
-            type="text"
+          <div class="active-cyan-3 active-cyan-4 mb-4">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search"
             value={this.state.title}
             onChange={this.titleChange}
-          ></input>
+            />
+          </div>
           <button
-            className="btn btn-success"
+            className="btn btn-outline-success"
             type="submit"
             onClick={this.search}
           >

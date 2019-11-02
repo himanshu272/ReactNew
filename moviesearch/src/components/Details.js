@@ -6,7 +6,7 @@ function Details(props) {
   return (
     <div>
       <h3> Details: </h3>
-      <img src={props.movie.Poster} alt={img}></img>
+      <img src={props.movie.Poster} alt={img} width="200"></img>
       <h6 className="display-6"> Movie name: {props.movie.Title} </h6>
       <h6 className="display-6"> Released in: {props.movie.Year}</h6>
       <h6 className="display-6"> Rated: {props.movie.Rated}</h6>
